@@ -5,7 +5,7 @@ votos y políticas consiguen que más personas vivan con dignidad. Con sus datos
 programa que lo calcula. Está hecho para que cualquiera pueda **revisarlo, discutirlo, cambiarle un dato
 y ver qué pasa**.
 
-Autor: Juan Carlos Siria · Versión del paquete: 0.2 · Fecha: 13 de noviembre de 2026
+Autor: Juan Carlos Siria · Versión del paquete: 0.2.1 · Fecha: 13 de noviembre de 2026
 
 ## Qué es
 
@@ -136,4 +136,4 @@ siempre el documento, la página y el enlace.
 ## Licencia y cita
 
 Ver `LICENCIA.md`. Si lo usas, cita: *Juan Carlos Siria, «SOIH · La participación democrática en España
-como sistema», versión 0.2, 13 de noviembre de 2026.*
+como sistema», versión 0.2.1, 13 de noviembre de 2026.*

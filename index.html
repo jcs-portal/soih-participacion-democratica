@@ -52,6 +52,13 @@
   #resumen { display:flex; flex-wrap:wrap; gap:6px; margin:0 0 8px; }
   #resumen span { padding:3px 9px; border-radius:12px; border:1px solid currentColor; font-size:13px; background:#fff; }
   .leyenda { font-size:12px; color:#52606D; margin:0 0 6px; }
+  details.leeT { border:1px solid #D9E2EC; background:#F8FAFC; border-radius:6px; padding:6px 10px; margin:4px 0 8px; font-size:12.5px; color:#334E68; }
+  details.leeT summary { cursor:pointer; font-weight:700; color:#12355B; }
+  details.leeT dl { margin:6px 0 2px; } details.leeT dt { font-weight:700; margin-top:6px; } details.leeT dd { margin:1px 0 0 0; }
+  details.leeT p { margin:6px 0 0; }
+  th[rowspan] { vertical-align:bottom; }
+  th.plazoG { text-align:center; color:#12355B; border-bottom:1px solid #CBD2D9; padding-bottom:2px; }
+  th abbr { text-decoration:none; cursor:help; border-bottom:1px dotted #9FB3C8; }
   select, input[type=text] { font:inherit; padding:3px 5px; border:1px solid #CBD2D9; border-radius:4px; max-width:100%; }
   svg text { font-family: Calibri, "Segoe UI", Arial, sans-serif; }
   /* Panel de la variable foco: cómo le llega el efecto, cadena a cadena (solo si el caso declara foco) */
@@ -155,7 +162,7 @@ const DATOS = {"titulo":"Participación democrática en España","umbral":0.02,"
   const fijo = new Map();          // id -> 1 (sube) | 0 (se mantiene) | -1 (baja)
   let minConf = 1, horizonte = 3;  // 3 = acumulado
   let escActivo = null, tocado = false;
-  let abreEsc = !movil(), abreVar = !movil();
+  let abreEsc = !movil(), abreVar = !movil(), abreLee = !movil();
   // Relaciones que entran en el calculo: las hipotesis del analista solo si se pide de forma expresa (-1)
   const usa = a => a.h ? minConf === -1 : a.c >= Math.max(minConf, 0);
   let res = new Map();             // id -> [ {pos,neg,cam:[]} x 3 ]
@@ -328,7 +335,17 @@ const DATOS = {"titulo":"Participación democrática en España","umbral":0.02,"
     else { const t = recuento();
       h += `<p class="pista">En primera ronda, de ${t.total} resultados que le importan a alguien:</p><div id="resumen"><span class="mej">✓ ${t.mej} mejoran</span><span class="emp">✗ ${t.emp} empeoran</span><span class="mix">◆ ${t.mix} con vías contrarias</span><span class="nul">${t.nul} sin vía</span></div>` +
         `<p class="leyenda"><span class="mej">Verde</span>: todas las vías empujan a mejor. <span class="emp">Rojo</span>: a peor. <span class="mix">Morado ◆</span>: hay vías en los dos sentidos y el modelo no sabe cuál pesa más. <b>Pulsa una celda para ver por qué.</b></p>`; }
-    h += '<div class="tabla"><table><tr><th>Resultado</th>' + HOR.map(x => `<th class="hz" style="text-align:center">${x}</th>`).join('') + '<th style="text-align:center">Conjunto</th><th style="text-align:center">Primera ronda</th><th style="text-align:center">Efectos de vuelta</th></tr>';
+    const tip = { plazo: 'Cuándo llega cada vía: se suman los retrasos de sus eslabones', conj: 'Todas las vías juntas, sin separar por plazo', pr: 'Lo que dicen las vías más cortas (menos eslabones)', ev: 'Las vías más largas: rodeos y realimentaciones, a favor o en contra' };
+    const th = (t, x, hz, fil) => `<th${hz ? ' class="hz"' : ''}${fil ? ' rowspan="2"' : ''} style="text-align:center"><abbr title="${tip[t]}">${x}</abbr></th>`;
+    h += `<details class="leeT"${abreLee ? ' open' : ''}><summary>Cómo leer la tabla</summary>` +
+      '<p>Cada fila es un resultado. Cada celda cuenta las <b>vías</b>: cadenas de causas que van de lo que has movido hasta ese resultado. «▲ 3» son tres vías que lo empujan a subir; «◆ 2▲ 1▼», vías en los dos sentidos. El color dice si eso es bueno o malo para ese resultado. <b>Pulsa una celda</b> para ver las vías.</p><dl>' +
+      (movil() ? '<dt>Plazos</dt><dd>En una pantalla ancha hay además tres columnas de plazo: menos de 1 año, de 1 a 4 y más de 4.</dd>'
+        : '<dt>Tiempo en notarse: menos de 1 año · de 1 a 4 años · más de 4 años</dt><dd>Cuánto tarda en notarse cada vía. Cada relación del mapa tarda en notarse (inmediata, meses, de 1 a 3 años o más de 3); se suman los retrasos de todos los eslabones de la vía y se coloca en su columna.</dd>') +
+      '<dt>Conjunto</dt><dd>Todas las vías juntas, sin separar por plazo.</dd>' +
+      '<dt>Primera ronda</dt><dd>Lo que dicen solo las vías más cortas, las de menos eslabones; debajo, cuántos pasos tienen. Es el efecto directo, lo que promete quien propone la medida, y el veredicto que usan el resumen y el recuadro de arriba. Ojo: corta no quiere decir rápida; una vía de dos pasos lentos puede tardar años.</dd>' +
+      '<dt>Efectos de vuelta</dt><dd>Las vías más largas, que dan un rodeo o vuelven sobre sí mismas. Se cuentan a favor o en contra de lo que le conviene al resultado (lo que pone «Mejora si…»). Avisan de que el efecto directo puede quedar compensado, en parte o del todo, más adelante.</dd></dl>' +
+      '<p>Que mande la primera ronda es una convención: llega antes, pero el modelo no sabe si pesa más. Y el número de vías no mide la fuerza del efecto.</p></details>';
+    h += '<div class="tabla"><table><tr><th rowspan="2">Resultado</th><th class="hz plazoG" colspan="3"><abbr title="' + tip.plazo + '">⏱ Tiempo en notarse</abbr></th>' + th('conj', 'Conjunto', 0, 1) + th('pr', 'Primera ronda', 0, 1) + th('ev', 'Efectos de vuelta', 0, 1) + '</tr><tr>' + HOR.map(x => th('plazo', x, 1)).join('') + '</tr>';
     for (const g of DATOS.resultados) {
       h += `<tr class="dim"><td colspan="7">${esc(g.dimension)}</td></tr>`;
       for (const [id, mejor] of g.variables) {
@@ -342,9 +359,10 @@ const DATOS = {"titulo":"Participación democrática en España","umbral":0.02,"
         h += '</tr>';
       }
     }
-    h += '</table></div><p class="obs">El número es la cantidad de vías. <b>Conjunto</b>: todas las vías, sumando los plazos' + (movil() ? ' (en una pantalla ancha se ven por separado)' : '') + '.</p><p class="obs"><b>Primera ronda</b>: el veredicto de las vías más cortas, las que llegan con menos pasos. <b>Efectos de vuelta</b>: las vías más largas, que rodean o realimentan, contadas según favorezcan o no lo que le conviene al actor. Es una convención: la primera ronda llega antes, pero el mapa no dice si pesa más.</p><div id="det"></div>';
+    h += '</table></div><div id="det"></div>';
     der.innerHTML = h;
     enlazarFoco();
+    const lee = der.querySelector('details.leeT'); if (lee) lee.addEventListener('toggle', () => { abreLee = lee.open; });
     der.querySelectorAll('td.c').forEach(c => c.addEventListener('click', () => { detalle = { id: c.dataset.id, h: +c.dataset.h }; pintarDetalle(); pintarSvg(); const d = document.getElementById('det'); if (d && d.firstChild) d.scrollIntoView({ behavior: 'smooth', block: 'start' }); }));
     pintarDetalle();
   }

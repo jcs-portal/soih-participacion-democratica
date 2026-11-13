@@ -959,6 +959,13 @@ if (caso.resultados) {
   if (pub.inicio && !hayEsc(pub.inicio)) { console.error(`Simulador: escenario de inicio desconocido ${pub.inicio}`); process.exit(1); }
   for (const p of (pub.pruebas || [])) if (p.escenario && !hayEsc(p.escenario)) { console.error(`Simulador: prueba con escenario desconocido ${p.escenario}`); process.exit(1); }
   datosSim.inicio = pub.inicio || null; datosSim.pruebas = pub.pruebas || []; datosSim.publico = pub.publico || null;
+  // Variable foco (opcional): el simulador enseña cómo le llega el efecto de cada palanca, cadena a cadena.
+  // Tiene que ser un resultado, para saber en qué sentido mejora. Sin foco, el simulador es el de siempre.
+  if (pub.foco) {
+    const r = (caso.resultados || []).flatMap(g => g.variables).find(([id]) => id === pub.foco.id);
+    if (!V.has(pub.foco.id) || !r) { console.error(`Simulador: la variable foco ${pub.foco.id} no existe o no es un resultado`); process.exit(1); }
+    datosSim.foco = { id: pub.foco.id, mejor: r[1], titulo: pub.foco.titulo || V.get(pub.foco.id).nombre, corto: pub.foco.corto || V.get(pub.foco.id).nombre };
+  }
   const atr = s => String(s).replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;');
   const meta = pub.publico ? [['og:type', 'website'], ['og:title', caso.titulo + ' · Simulador'], ['og:description', pub.publico.descripcion], ['og:url', pub.publico.url], ['og:image', pub.publico.imagen]]
     .filter(([, v]) => v).map(([k, v]) => `<meta property="${k}" content="${atr(v)}">`).concat(pub.publico.descripcion ? [`<meta name="description" content="${atr(pub.publico.descripcion)}">`, '<meta name="twitter:card" content="summary_large_image">'] : []).join('\n') : '';

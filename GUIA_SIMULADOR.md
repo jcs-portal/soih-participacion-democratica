@@ -42,14 +42,14 @@ Funciona en el ordenador y en el móvil. En el móvil las tres zonas se apilan u
 barra al pie de la pantalla salta de una a otra con el recuento de lo que mejora y empeora a la vista.
 
 La primera vez que lo abres aparece un resumen de cómo se juega; el botón **? Cómo se usa** lo vuelve a
-abrir. Se abre con un ejemplo ya cargado, **Más participación (sin decir cómo)**, que responde a la
-pregunta «¿qué efecto tienen los que no votan?»: sube la participación y mira qué se mueve. No es una
-medida, porque no dice qué hace subir la participación; para eso están los demás escenarios.
+abrir. Se abre con un ejemplo ya cargado, **Facilitar el voto por correo y el voto exterior**. Para la
+pregunta al revés («¿qué efecto tienen los que no votan?»), pulsa en **Prueba esto** la opción **Al revés:
+¿qué arrastra que vote más gente?**.
 
 **Sin conexión:** en la página del proyecto en GitHub, pulsa **Code** y luego **Download ZIP**,
 descomprímelo y abre `index.html` (en la raíz) con el navegador.
 
-| Así se abre en el móvil | Y la guía rápida de la primera visita, en el ordenador |
+| El recuadro de la participación, en el móvil | Y la guía rápida de la primera visita, en el ordenador |
 |---|---|
 | ![El simulador en un teléfono](12_Cases/Participacion%20democratica/imagenes/guia_06_movil.png) | ![La guía rápida](12_Cases/Participacion%20democratica/imagenes/guia_05_bienvenida.png) |
 
@@ -60,10 +60,34 @@ descomprímelo y abre `index.html` (en la raíz) con el navegador.
 | Zona | Para qué sirve |
 |---|---|
 | **1. Elige qué cambia** (izquierda) | Aquí decides tú: qué medida se toma o qué condición cambia. |
+| **¿Sube o baja la participación?** (arriba a la derecha) | La pregunta del caso: hacia dónde va la participación y por qué cadena de causas le llega cada cambio. |
 | **2. Qué empuja a qué** (derecha) | El resultado: qué mejora y qué empeora, para quién y en qué plazo. |
 | **3. El mapa** (centro) | El dibujo del sistema. Se iluminan las relaciones por las que viaja el efecto. |
 
-Se usan en ese orden: eliges en la 1, miras el resultado en la 2 y usas la 3 para entender por qué.
+Se usan en ese orden: eliges en la 1, miras en el recuadro qué le pasa a la participación, el resto de
+resultados en la 2, y usas la 3 para entender por qué.
+
+## El recuadro de la participación: el efecto dominó
+
+Es lo primero que hay que mirar, porque responde a la pregunta del caso. Cada vez que cambias algo:
+
+1. **El veredicto, en grande:** la participación **sube** (verde), **baja** (rojo), recibe **empujones en
+   los dos sentidos** (morado) o **no le llega** nada (gris). Es el mismo veredicto que la columna
+   «Primera ronda» de la tabla, y debajo dice cuántos efectos de vuelta empujan hacia cada lado.
+2. **La cadena, variable a variable:** para cada variable que has movido, el camino de causas por el que su
+   efecto llega a la participación, eslabón a eslabón y animado. Por ejemplo: ▲ salario mínimo →(−) ▼
+   inseguridad económica →(−) ▲ participación. Cada eslabón dice si esa variable sube o baja. Cada flecha
+   lleva su signo: **+** si las dos se mueven en el mismo sentido y **−** si se mueven en sentido contrario.
+   El trazo de la flecha dice la confianza: continuo si es media o alta, a trazos si es baja.
+3. **Pulsa una flecha** para leer el mecanismo de esa relación. **Pulsa el veredicto** para ver todas las vías
+   debajo de la tabla y dibujarlas en el mapa. **Ver la cadena otra vez** repite la animación.
+
+Cuando mueves varias variables a la vez, cada una sale con su etiqueta: **empuja a que suba**, **empuja a
+que baje**, o **en los dos sentidos**. Si su camino es más largo que el de otra, sale además **llega más
+tarde**: cuenta como efecto de vuelta, no en el veredicto. Así se ve qué variable tira hacia cada lado.
+
+Todas las piezas tienen el mismo tamaño a propósito: el modelo dice hacia dónde, no cuánto. Que una
+variable llegue por más vías no quiere decir que su efecto sea mayor.
 
 **Un solo código de colores.** El color solo dice si algo es bueno o malo: **verde** mejora, **rojo**
 empeora, **morado** hay vías en los dos sentidos. Lo que indica una dirección (los botones ▲ ● ▼, las
@@ -77,8 +101,8 @@ carga entero. Aparece un recuadro azul que explica en qué consiste y, debajo, *
 las variables que mueve ese escenario, con sus botones, para que las cambies o las quites con **✕**.
 **Limpiar todo y empezar de cero** lo borra todo.
 
-En **Prueba esto** hay comparaciones de un clic: el voto por correo, las listas abiertas, el salario
-mínimo y ver solo la evidencia mejor respaldada.
+En **Prueba esto** hay comparaciones de un clic: la pregunta al revés (qué arrastra que vote más gente),
+las listas abiertas, el salario mínimo y ver solo la evidencia mejor respaldada.
 
 **La manual: variable a variable.** En **Todas las variables** está cada variable del mapa. Cada una
 tiene tres botones:
@@ -154,11 +178,13 @@ cálculo recorre las 212.
 
 ## Ejemplo 1: facilitar el voto por correo
 
-En **Prueba esto**, pulsa **Compáralo con facilitar el voto por correo**.
+Es el ejemplo con el que se abre. En el recuadro, la participación **sube**: el voto por correo llega en
+un paso; el voto exterior sin solicitud previa (el voto rogado baja) llega en dos, a través de la
+participación de los residentes en el extranjero, y por eso sale como «llega más tarde».
 
 ![Facilitar el voto por correo](12_Cases/Participacion%20democratica/imagenes/guia_02_voto_correo.png)
 
-Arriba, el recuento: **11 resultados mejoran y 1 empeora**. Baja por la tabla: la
+Debajo, el recuento: **11 resultados mejoran y 1 empeora**. Baja por la tabla: la
 brecha de participación entre barrios baja por dos vías; la abstención de quien «no pudo» votar baja
 en un paso, el más directo. Pulsa la fila del resultado que empeora y mira por qué camino llega.
 
@@ -168,7 +194,9 @@ Pulsa **Mira qué traen las listas abiertas con un reparto más proporcional**.
 
 ![Listas abiertas y fórmula más proporcional](12_Cases/Participacion%20democratica/imagenes/guia_03_listas.png)
 
-Aquí sale algo morado. Mira la fila **Brecha de participación por renta del barrio**: la primera ronda
+En el recuadro, la participación sube por dos vías de un paso (las listas abiertas y la barrera más baja),
+pero avisa de **2 efectos de vuelta a bajar**: lo que la medida devuelve por caminos más largos. Aquí sale
+además algo morado en la tabla. Mira la fila **Brecha de participación por renta del barrio**: la primera ronda
 dice «mejora» en dos pasos, pero en **Efectos de vuelta** hay dos vías en contra, y en conjunto queda
 ◆ 2▲ 2▼: el modelo no puede decir cuál gana. Pulsa la celda para ver las vías. Lee también el recuadro
 azul de la zona 1: la evidencia de las listas abiertas viene de municipios de 100 a 250 habitantes, y el
@@ -182,7 +210,9 @@ Pulsa **Mira una política: subir el salario mínimo**.
 ![Subir el salario mínimo](12_Cases/Participacion%20democratica/imagenes/guia_04_salario_minimo.png)
 
 Es el escenario con más resultados que mejoran (15), y también con costes a la vista: el empleo y
-las horas de los puestos peor pagados empeoran. Las dos caras están medidas y entran en la cuenta.
+las horas de los puestos peor pagados empeoran. Las dos caras están medidas y entran en la cuenta. En el
+recuadro se ve que el salario mínimo no toca la participación directamente: llega en dos pasos, porque
+reduce la inseguridad económica y mejora el bienestar, y las dos cosas acercan a votar.
 
 Ahora pulsa **Mira solo la evidencia de confianza media o alta** (o elige esa opción en el desplegable
 **Relaciones que se usan**, al final de la zona 1):
@@ -215,9 +245,11 @@ a la izquierda o a la derecha): con la evidencia mejor respaldada no queda ningu
 ## Cosas que probar
 
 1. Carga **Voto obligatorio con sanción** y compáralo con facilitar el voto por correo.
-2. Compara **Más gasto social financiado con impuestos** con la misma medida **financiada con déficit**.
-3. Carga **Bajar la presión fiscal recortando servicios públicos** y cuenta las filas en rojo.
-4. Elige una medida que defiendas y busca a quién perjudica. Luego una que rechaces y busca a quién
+2. Juega con varias variables a la vez: deja el voto por correo, sube el salario mínimo y baja la presión
+   fiscal. Mira en el recuadro qué variable empuja la participación hacia cada lado y cuál llega antes.
+3. Compara **Más gasto social financiado con impuestos** con la misma medida **financiada con déficit**.
+4. Carga **Bajar la presión fiscal recortando servicios públicos** y cuenta las filas en rojo.
+5. Elige una medida que defiendas y busca a quién perjudica. Luego una que rechaces y busca a quién
    beneficia.
 
 ## Qué hay detrás
@@ -226,5 +258,5 @@ Cada relación del mapa procede de una fuente: un dato oficial o un estudio, con
 Están en `datos/relaciones.csv`. Si una relación no te convence, puedes quitarla o cambiarla en
 `datos/caso.js` y recalcular; el archivo `LEEME.md` explica cómo.
 
-Las capturas de esta guía son de la versión 0.1. Si el modelo cambia, los números de los ejemplos
+Las capturas de esta guía son de la versión 0.2. Si el modelo cambia, los números de los ejemplos
 pueden variar.

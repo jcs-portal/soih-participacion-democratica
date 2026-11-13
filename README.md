@@ -5,7 +5,7 @@ votos y políticas consiguen que más personas vivan con dignidad. Con sus datos
 programa que lo calcula. Está hecho para que cualquiera pueda **revisarlo, discutirlo, cambiarle un dato
 y ver qué pasa**.
 
-Autor: Juan Carlos Siria · Versión del paquete: 0.1 · Fecha: 13 de noviembre de 2026
+Autor: Juan Carlos Siria · Versión del paquete: 0.2 · Fecha: 13 de noviembre de 2026
 
 ## Qué es
 
@@ -39,8 +39,10 @@ Autor: Juan Carlos Siria · Versión del paquete: 0.1 · Fecha: 13 de noviembre 
 ## Tres maneras de usarlo
 
 1. **Sin instalar nada.** Abre https://jcs-portal.github.io/soih-participacion-democratica/ en el
-   ordenador o en el móvil. Se abre con un ejemplo cargado (más participación, sin decir cómo); cambia lo
-   que quieras y mira qué resultados mejoran y empeoran, para quién y por qué camino. Lo que hagas se
+   ordenador o en el móvil. Se abre con un ejemplo cargado (facilitar el voto por correo); cambia lo
+   que quieras y mira, en el recuadro de arriba, si la participación sube o baja y por qué cadena de causas
+   le llega el efecto de cada variable que hayas movido; debajo, qué resultados mejoran y empeoran y para
+   quién. Lo que hagas se
    queda en tu pantalla. Sin conexión: descarga el paquete («Code» y «Download ZIP») y abre `index.html`.
 2. **Cambiando los datos.** Edita `caso.js` y recalcula, como se explica abajo. Hace falta Node.js.
 3. **Con tus propias convicciones.** Lo que creas y no puedas demostrar, escríbelo como hipótesis
@@ -134,4 +136,4 @@ siempre el documento, la página y el enlace.
 ## Licencia y cita
 
 Ver `LICENCIA.md`. Si lo usas, cita: *Juan Carlos Siria, «SOIH · La participación democrática en España
-como sistema», versión 0.1, 13 de noviembre de 2026.*
+como sistema», versión 0.2, 13 de noviembre de 2026.*

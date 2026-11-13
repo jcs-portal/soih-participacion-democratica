@@ -905,9 +905,13 @@ const esquema = {
 // Pruebas: sugerencias que el simulador ofrece al abrirse. Publico: etiquetas para compartir el enlace (13/11/2026; la
 // dirección es la del repositorio decidido el 22/10/2026 y no funciona hasta que se publique).
 const simulador = {
-  inicio: 'E9',
+  // Inicio en E1 desde el 13/11/2026 (antes E9): con el foco en la participación, E9 la fija como causa y el panel no tendría
+  // nada que enseñar al abrir. E9 sigue entre los escenarios.
+  inicio: 'E1',
+  // Foco (13/11/2026, decisión del autor: «el foco es ver cómo afecta a la participación el juego de variables»)
+  foco: { id: 'P01', titulo: '¿Sube o baja la participación?', corto: 'Participación' },
   pruebas: [
-    { texto: 'Compáralo con facilitar el voto por correo', escenario: 'E1' },
+    { texto: 'Al revés: ¿qué arrastra que vote más gente?', escenario: 'E9' },
     { texto: 'Mira qué traen las listas abiertas con un reparto más proporcional', escenario: 'E3' },
     { texto: 'Mira una política: subir el salario mínimo', escenario: 'E6' },
     { texto: 'Mira solo la evidencia de confianza media o alta', confianza: 2 }

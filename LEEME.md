@@ -5,17 +5,17 @@ votos y políticas consiguen que más personas vivan con dignidad. Con sus datos
 programa que lo calcula. Está hecho para que cualquiera pueda **revisarlo, discutirlo, cambiarle un dato
 y ver qué pasa**.
 
-Autor: Juan Carlos Siria · Versión del paquete: 0.2.1 · Fecha: 13 de noviembre de 2026
+Autor: Juan Carlos Siria · Versión del paquete: 0.2.2 · Fecha: 15 de noviembre de 2026
 
 ## Qué es
 
-- **Un mapa de causas y efectos**: 212 factores (participación, confianza, desigualdad,
-  soledad, reglas electorales, impuestos, gasto, salario mínimo) unidos por 333 relaciones del
+- **Un mapa de causas y efectos**: 215 factores (participación, confianza, desigualdad,
+  soledad, reglas electorales, impuestos, gasto, salario mínimo) unidos por 339 relaciones del
   tipo «si esto sube, aquello sube o baja».
 - **Solo cuenta lo que tiene fuente.** Cada relación lleva su nivel de evidencia: firme (un estudio que
   aísla la causa, con datos de España o de la Unión Europea), con apoyo (la causa medida en otro país, o
-  en España solo como asociación) o débil (informe, teoría o lectura parcial). Hay 273 relaciones
-  con respaldo, 27 identidades contables y 29 hipótesis sin fuente, que no entran en
+  en España solo como asociación) o débil (informe, teoría o lectura parcial). Hay 278 relaciones
+  con respaldo, 28 identidades contables y 29 hipótesis sin fuente, que no entran en
   el cálculo principal.
 - **Un objetivo declarado**: se mide cómo viven las personas y cuánta gente participa, no el PIB ni la
   bolsa. Todo se juzga con la misma vara: los riesgos para la democracia se miden por conductas (atacar a
@@ -136,4 +136,4 @@ siempre el documento, la página y el enlace.
 ## Licencia y cita
 
 Ver `LICENCIA.md`. Si lo usas, cita: *Juan Carlos Siria, «SOIH · La participación democrática en España
-como sistema», versión 0.2.1, 13 de noviembre de 2026.*
+como sistema», versión 0.2.2, 15 de noviembre de 2026.*

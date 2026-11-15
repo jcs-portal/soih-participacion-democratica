@@ -14,7 +14,7 @@ el mapa paso a paso y, al pulsar cada flecha, enseña de qué estudio sale.
 ## Antes de empezar: cuatro ideas
 
 **1. Una variable es algo que puede subir o bajar.** La participación electoral, la confianza en el
-Parlamento, la soledad, el salario mínimo. El modelo tiene 212.
+Parlamento, la soledad, el salario mínimo. El modelo tiene 215.
 
 **2. Una relación une dos variables y tiene un signo.**
 
@@ -178,7 +178,7 @@ baja, pero no la cuenta como mejora ni como empeoramiento.
 
 Deja el ratón sobre una variable para ver su definición y su último dato; púlsala para fijarla; cambia
 el plazo en el desplegable de abajo. El mapa dibuja las variables clave para que se pueda leer; el
-cálculo recorre las 212.
+cálculo recorre las 215.
 
 ## Ejemplo 1: facilitar el voto por correo
 
@@ -262,5 +262,5 @@ Cada relación del mapa procede de una fuente: un dato oficial o un estudio, con
 Están en `datos/relaciones.csv`. Si una relación no te convence, puedes quitarla o cambiarla en
 `datos/caso.js` y recalcular; el archivo `LEEME.md` explica cómo.
 
-Las capturas de esta guía son de la versión 0.2.1. Si el modelo cambia, los números de los ejemplos
+Las capturas de esta guía son de la versión 0.2.2. Si el modelo cambia, los números de los ejemplos
 pueden variar.

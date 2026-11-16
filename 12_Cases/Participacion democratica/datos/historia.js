@@ -24,7 +24,7 @@ module.exports = {
     { id: 'E22', et: 'Desigualdad de la\nrenta disponible', x: 1110, y: 250, dato: 'Gini 30,8 (2025)', w: 156 },
     { id: 'L48', et: 'Confianza en las\ninstituciones', x: 600, y: 170, dato: 'Parlamento 26 % (2026)', w: 170, h: 70 },
     { id: 'L27', et: 'Escándalos de\ncorrupción', x: 330, y: 70 },
-    { id: 'S47', et: 'Aislamiento\nsocial', x: 200, y: 290, dato: '50,7 % (68,3 % en 2015)', w: 176, h: 70 },
+    { id: 'S47', et: 'Aislamiento\nsocial', x: 200, y: 290, dato: 've a amigos cada semana: 50,7 % (68,3 % en 2015)', w: 176, h: 70 },
     { id: 'S25', et: 'Soledad\nno deseada', x: 200, y: 500, dato: '20,2 % (2026)', h: 70 },
     { id: 'S16', et: 'Agravio, sentirse\ndespreciado', x: 1010, y: 80, w: 160 },
     { id: 'S22', et: 'Protesta', x: 830, y: 280, dato: '5,6 % (2022)' },
@@ -78,7 +78,7 @@ module.exports = {
         intención de no votar, y quien se abstiene confía un poco menos después. Las dos flechas cierran un <b>bucle de
         refuerzo</b>: cada vuelta empuja en el mismo sentido.</p>
         <div class="aviso">Que un bucle exista no quiere decir que pese. Medido con datos, este se refuerza muy poco: lo
-        que da una vuelta vuelve multiplicado por 0,01. No hay aquí una espiral de desconfianza.</div>`
+        que da una vuelta vuelve multiplicado por 0,005 (como mucho, por 0,01). No hay aquí una espiral de desconfianza.</div>`
     },
     {
       titulo: 'La corrupción: lo mejor medido',
@@ -98,8 +98,8 @@ module.exports = {
       texto: `<p>En 2015, el 68,3 % de los españoles quedaba con amigos al menos una vez por semana; en 2022, el 50,7 %. Una de
         cada cinco personas adultas dice sentir soledad no deseada.</p>
         <p>Quien vive aislado vota menos: nadie le moviliza ni le acompaña. Quien se siente solo de forma crónica, también.
-        Y abstenerse aísla un poco más al año siguiente: otro bucle de refuerzo, algo más fuerte que el de la confianza
-        (0,07 por vuelta), pero pequeño.</p>
+        Y abstenerse aísla un poco más al año siguiente: otro bucle de refuerzo, tan pequeño como el de la confianza
+        (0,005 por vuelta con las estimaciones; como mucho 0,07).</p>
         <div class="aviso">Todo esto son asociaciones, no causas probadas: ningún estudio español ha aislado el efecto de la
         soledad sobre el voto.</div>`
     },
@@ -136,12 +136,12 @@ module.exports = {
       enlaces: ['R119', 'R118', 'R522', 'R498', 'R499', 'R497'],
       texto: `<p>Algunas cajas no se miden: se <b>deciden</b>. Son las palancas, marcadas con un triángulo. Dos son reglas
         electorales: cómo son las listas y con qué fórmula y tamaño de circunscripción se reparten los escaños.</p>
-        <p>Abrir las listas sube algo la participación (en municipios españoles, un punto). Bajar la barrera para conseguir
+        <p>Abrir las listas sube algo la participación (en municipios españoles pequeños, un punto). Bajar la barrera para conseguir
         escaño también, porque menos gente siente que su voto se pierde. Pero trae más partidos, y con más partidos cuesta
         más formar y sostener un gobierno, lo que cansa al votante.</p>
-        <p>Con los pesos medidos en los estudios, el beneficio gana: la medida sale a favor en 499 de cada 500 versiones del
+        <p>Con los pesos medidos en los estudios, el beneficio gana: la medida sale a favor en las 500 versiones probadas del
         modelo compatibles con los datos, y la participación sube en prácticamente todas.</p>
-        <div class="aviso">Lo que no se puede afirmar: qué pasa con la satisfacción con la democracia (baja en el 77 % de las
+        <div class="aviso">Lo que no se puede afirmar: qué pasa con la satisfacción con la democracia (baja en el 78 % de las
         versiones) y con el paro. Y aparece un riesgo probable: más voto a partidos con conductas antipluralistas.</div>`
     },
     {
@@ -154,7 +154,7 @@ module.exports = {
         <p>Es una de las medidas más sólidas del modelo: de las doce cosas que el cálculo afirma sobre ella, once se sostienen
         frente a los datos.</p>
         <div class="aviso">Su riesgo conocido es que baje la confianza en la limpieza del recuento. Para que cambiara la
-        conclusión, ese riesgo tendría que pesar unas dieciocho veces lo que pesa una relación corriente del mapa medida con datos.</div>`
+        conclusión, ese riesgo tendría que pesar unas veinte veces lo que pesa una relación corriente del mapa medida con datos.</div>`
     },
     {
       titulo: 'Las políticas: el salario mínimo',
@@ -172,10 +172,10 @@ module.exports = {
       titulo: 'El mapa entero, y lo que no sabe',
       todo: true,
       texto: `<p>Lo que has visto es una parte. El modelo completo tiene {{res:variables}} variables y {{res:relaciones}}
-        relaciones, cada una con su fuente. Lo que solo es plausible se aparta y no se usa en el cálculo.</p>
+        relaciones. Cada una lleva su fuente, salvo las que solo son plausibles, que se apartan y no se usan en el cálculo.</p>
         <p><b>Dice hacia dónde, no cuánto.</b> El mapa indica si algo empuja a mejor o a peor. Como casi ningún peso está
         medido, se prueban miles de combinaciones de pesos y solo se quedan las que reproducen lo que dicen los datos: con
-        toda la evidencia, unas 4.750 de 150.000. Una conclusión solo se afirma si se cumple en al menos el 85 % de ellas.</p>
+        toda la evidencia, unas 6.200 de 150.000. Una conclusión solo se afirma si se cumple en al menos el 85 % de ellas.</p>
         <p><b>Lo que falta</b> y decidiría la discusión: si en España las políticas atienden menos a quien vota menos; cómo
         afecta la desinformación a la participación (no hay ningún estudio español); y cuánto pesa la riqueza acumulada en
         las reglas fiscales.</p>`

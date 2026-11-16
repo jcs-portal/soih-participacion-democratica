@@ -5,7 +5,7 @@ votos y políticas consiguen que más personas vivan con dignidad. Con sus datos
 programa que lo calcula. Está hecho para que cualquiera pueda **revisarlo, discutirlo, cambiarle un dato
 y ver qué pasa**.
 
-Autor: Juan Carlos Siria · Versión del paquete: 0.2.2 · Fecha: 15 de noviembre de 2026
+Autor: Juan Carlos Siria · Versión del paquete: 0.2.3 · Fecha: 16 de noviembre de 2026
 
 ## Qué es
 
@@ -15,8 +15,8 @@ Autor: Juan Carlos Siria · Versión del paquete: 0.2.2 · Fecha: 15 de noviembr
 - **Solo cuenta lo que tiene fuente.** Cada relación lleva su nivel de evidencia: firme (un estudio que
   aísla la causa, con datos de España o de la Unión Europea), con apoyo (la causa medida en otro país, o
   en España solo como asociación) o débil (informe, teoría o lectura parcial). Hay 278 relaciones
-  con respaldo, 28 identidades contables y 29 hipótesis sin fuente, que no entran en
-  el cálculo principal.
+  con respaldo, 28 identidades contables, 4 conjeturas y 29 hipótesis sin fuente; las
+  conjeturas y las hipótesis no entran en el cálculo principal.
 - **Un objetivo declarado**: se mide cómo viven las personas y cuánta gente participa, no el PIB ni la
   bolsa. Todo se juzga con la misma vara: los riesgos para la democracia se miden por conductas (atacar a
   jueces o a la prensa, señalar a minorías, incumplir sentencias, concentrar poder), no por etiquetas de
@@ -136,4 +136,4 @@ siempre el documento, la página y el enlace.
 ## Licencia y cita
 
 Ver `LICENCIA.md`. Si lo usas, cita: *Juan Carlos Siria, «SOIH · La participación democrática en España
-como sistema», versión 0.2.2, 15 de noviembre de 2026.*
+como sistema», versión 0.2.3, 16 de noviembre de 2026.*

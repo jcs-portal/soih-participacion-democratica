@@ -930,7 +930,7 @@ const simulador = {
     imagen: 'https://jcs-portal.github.io/soih-participacion-democratica/vista_previa.png',
     repo: 'https://github.com/jcs-portal/soih-participacion-democratica',
     guia: 'https://github.com/jcs-portal/soih-participacion-democratica/blob/main/GUIA_SIMULADOR.md',
-    descripcion: 'Simulación abierta: elige qué cambia en la participación democrática en España y mira a qué empuja, a quién beneficia y a quién perjudica. 212 variables; cada relación que entra en el cálculo lleva su fuente.'
+    descripcion: 'Simulación abierta: elige qué cambia en la participación democrática en España y mira a qué empuja, a quién beneficia y a quién perjudica. Cada relación que entra en el cálculo lleva su fuente.'
   }
 };
 

@@ -262,5 +262,6 @@ Cada relación del mapa procede de una fuente: un dato oficial o un estudio, con
 Están en `datos/relaciones.csv`. Si una relación no te convence, puedes quitarla o cambiarla en
 `datos/caso.js` y recalcular; el archivo `LEEME.md` explica cómo.
 
-Las capturas de esta guía son de la versión 0.2.2. Si el modelo cambia, los números de los ejemplos
-pueden variar.
+Las capturas de esta guía se hicieron con la versión 0.2.1. Los escenarios que muestran dan lo mismo en la
+0.2.3; solo cambia el recuento de variables (212 entonces, 215 ahora). Si el modelo cambia, los
+números de los ejemplos pueden variar.

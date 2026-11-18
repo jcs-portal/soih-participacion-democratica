@@ -959,6 +959,9 @@ if (caso.resultados) {
   if (pub.inicio && !hayEsc(pub.inicio)) { console.error(`Simulador: escenario de inicio desconocido ${pub.inicio}`); process.exit(1); }
   for (const p of (pub.pruebas || [])) if (p.escenario && !hayEsc(p.escenario)) { console.error(`Simulador: prueba con escenario desconocido ${p.escenario}`); process.exit(1); }
   datosSim.inicio = pub.inicio || null; datosSim.pruebas = pub.pruebas || []; datosSim.publico = pub.publico || null;
+  // Textos del panel que dependen del caso (sin ellos, los del caso de vivienda)
+  if (pub.tituloDecisiones) datosSim.tituloDecisiones = pub.tituloDecisiones;
+  if (pub.ejemploMantiene) datosSim.ejemploMantiene = pub.ejemploMantiene;
   // Variable foco (opcional): el simulador enseña cómo le llega el efecto de cada palanca, cadena a cadena.
   // Tiene que ser un resultado, para saber en qué sentido mejora. Sin foco, el simulador es el de siempre.
   if (pub.foco) {

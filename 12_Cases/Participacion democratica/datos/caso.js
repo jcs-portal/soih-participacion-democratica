@@ -917,6 +917,9 @@ const simulador = {
   // Inicio en E1 desde el 13/11/2026 (antes E9): con el foco en la participación, E9 la fija como causa y el panel no tendría
   // nada que enseñar al abrir. E9 sigue entre los escenarios.
   inicio: 'E1',
+  // Textos del panel propios del caso (17/11/2026; sin ellos salían los de vivienda)
+  tituloDecisiones: 'Decisiones de gobiernos, Cortes, partidos y otros actores',
+  ejemploMantiene: 'qué ocurre si se abren las listas y la corrupción no cambia',
   // Foco (13/11/2026, decisión del autor: «el foco es ver cómo afecta a la participación el juego de variables»)
   foco: { id: 'P01', titulo: '¿Sube o baja la participación?', corto: 'Participación' },
   pruebas: [

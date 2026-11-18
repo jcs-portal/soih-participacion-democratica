@@ -240,12 +240,12 @@
     if (pr.length) h += '<h3>Prueba esto</h3>' + pr.join('');
     h += `<details id="dEsc"${abreEsc ? ' open' : ''}><summary>Escenarios preparados (${DATOS.escenarios.length})</summary>` + DATOS.escenarios.map((s, i) => `<button class="esc${i === escActivo ? ' act' : ''}" data-e="${i}">${esc(s.nombre)}</button>`).join('') + '</details>';
     h += `<details id="dVar"${abreVar ? ' open' : ''}><summary>Todas las variables</summary>` +
-      '<h3>Decisiones de administraciones y banca</h3>' + dec.map(id => filaVar(id)).join('') +
-      '<h3>Condiciones externas</h3>' + exo.map(id => filaVar(id)).join('') +
+      '<h3>' + esc(DATOS.tituloDecisiones || 'Decisiones de administraciones y banca') + '</h3>' + dec.map(id => filaVar(id)).join('') +
+      (exo.length ? '<h3>Condiciones externas</h3>' + exo.map(id => filaVar(id)).join('') : '') +
       '<h3>Cualquier otra variable del mapa</h3><select id="otra"><option value="">Añadir variable…</option>' + DATOS.nodos.filter(n => !dec.includes(n.id) && !exo.includes(n.id) && !fijo.has(n.id)).sort((a, b) => a.n.localeCompare(b.n, 'es')).map(n => `<option value="${n.id}">${esc(n.n)}</option>`).join('') + '</select>' +
       '<p class="obs">La variable añadida entra subiendo (▲); cámbiala en «Lo que cambia ahora».</p></details>';
     h += '<h3>Relaciones que se usan</h3><select id="conf"><option value="1">Confianza baja o superior (sin conjeturas)</option><option value="2">Solo confianza media o alta</option><option value="3">Solo confianza alta</option><option value="0">Añadir conjeturas (una sola afirmación, sin datos)</option><option value="-1">Añadir también hipótesis del analista (sin fuente)</option></select>' +
-      '<div class="aviso">«Se mantiene» significa que la variable no cambia: corta los efectos que pasarían por ella. Sirve para preguntar, por ejemplo, qué ocurre si se regula el precio <i>y</i> la oferta de alquiler no cae.</div>' +
+      '<div class="aviso">«Se mantiene» significa que la variable no cambia: corta los efectos que pasarían por ella. Sirve para preguntar, por ejemplo, ' + (DATOS.ejemploMantiene ? esc(DATOS.ejemploMantiene) : 'qué ocurre si se regula el precio <i>y</i> la oferta de alquiler no cae') + '.</div>' +
       (pub.repo ? `<p class="obs">El modelo, los datos y la fuente de cada relación están en <a href="${esc(pub.repo)}" target="_blank" rel="noopener">GitHub</a>${pub.guia ? `, con una <a href="${esc(pub.guia)}" target="_blank" rel="noopener">guía completa</a>` : ''}.</p>` : '');
     izq.innerHTML = h;
     document.getElementById('conf').value = String(minConf);
